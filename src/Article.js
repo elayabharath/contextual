@@ -8,8 +8,14 @@ export class Article extends Component {
     return (
         <div>
             <ArticleHeader/>
-            <ArticleContent/>
+            <ArticleContent articleContent={this.state.articleContent}/>
         </div>
     );
+  }
+
+  constructor() {
+  	super();
+  	this.state = { articleContent: 'This is a sample article provided as mock data for the contextual app.'
+	};
   }
 }

@@ -3,7 +3,10 @@ import React, { Component }  from 'react';
 export class ArticleContent extends Component {
   render() {
     return (
-        <p>Article Content</p>
+    	<div>
+	        <p>Article Content</p>
+	        <div>{this.props.articleContent}</div>
+        </div>
     );
   }
 }
