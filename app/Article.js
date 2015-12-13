@@ -1,11 +1,11 @@
-import React, { Component }  from 'react';
+var React = require('react');
+var ArticleHeader = require('./ArticleHeader.js');
+var ArticleContent = require('./ArticleContent.js');
 
-import { ArticleHeader } from './ArticleHeader';
-import { ArticleContent } from './ArticleContent';
+var Article = React.createClass({
 
-export class Article extends Component {
-    render() {
-        return (
+	render: function() {
+		return (
             <div>
                 <ArticleHeader
                     header = {this.props.header}
@@ -13,10 +13,9 @@ export class Article extends Component {
                     image={this.props.image}/>
                 <ArticleContent article = {this.props.article}/>
             </div>
-        );
-    }
+		);
+	}
 
-    constructor() {
-    	super();
-    }
-}
+});
+
+module.exports = Article;

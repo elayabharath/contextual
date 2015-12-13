@@ -1,14 +1,14 @@
-import React, { Component }  from 'react';
-import { People } from './People';
+var React = require('react');
+var People = require('./People.js');
 
-export class Sidebar extends Component {
-    render() {
+var ReaderContainer = React.createClass({
+    render: function() {
         return (
             <div className="sidebar" style={{height: "100%"}}>
                 <p className="sidebar-title">Key People</p>
                 <div>
         	        {this.props.people.map((keyword, index) => (
-        	        	<People key={index} name={keyword.name} />
+        	        	<People key={index} name={keyword.name} id={index+keyword.name} />
         	        ))}
               	</div>
                 <p className="sidebar-title">Interests</p>
@@ -20,4 +20,6 @@ export class Sidebar extends Component {
           	</div>
         );
     }
-}
+});
+
+module.exports = ReaderContainer;

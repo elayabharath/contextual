@@ -1,12 +1,8 @@
-import React, { Component }  from 'react';
+var React = require('react');
 
-export class ArticleHeader extends Component {
+var ArticleHeader = React.createClass({
 
-    constructor() {
-    	super();
-    }
-
-    render() {
+	render: function() {
         return (
             <div className="article-header" style={{backgroundImage: 'url('+this.props.image+')', backgroundSize: 'cover'}}>
                 <div style={{background: 'rgba(0, 0, 0, 0.6)'}}>
@@ -15,5 +11,8 @@ export class ArticleHeader extends Component {
                 </div>
             </div>
         );
-    }
-}
+	}
+
+});
+
+module.exports = ArticleHeader;

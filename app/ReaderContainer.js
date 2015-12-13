@@ -1,24 +1,25 @@
-import React, { Component }  from 'react';
+var React = require('react');
+var Article = require('./Article.js');
+var Sidebar = require('./Sidebar.js');
+var PeopleCard = require('./PeopleCard.js');
+var Reflux = require('reflux');
+var Store = require('./store.js');
 
-import { Article } from './Article';
-import { Sidebar } from './Sidebar';
-import { PeopleCard } from './PeopleCard';
+var request = require('superagent');
 
-import request from 'superagent';
+var ReaderContainer = React.createClass({
 
-export class ReaderContainer extends Component {
+    mixins: [Reflux.connect(Store,"storeData")],
 
-    constructor() {
-    	super();
-    	this.state = { data : null };
-    }
+    getInitialState: function() {
+        return {data: null};
+    },
 
-    componentDidMount() {
-        console.log(this);
+    componentDidMount: function() {
         this.fetchData();
-    }
+    },
 
-    fetchData() {
+    fetchData: function() {
         var self = this;
         request
            .get('http://54.179.190.109:8080/contents')
@@ -26,9 +27,9 @@ export class ReaderContainer extends Component {
                self.setState({data: res.body});
                console.log(res.body);
            });
-    }
+    },
 
-    render() {
+    render: function() {
         if( this.state.data == null ) {
             return <div className="loading-screen">
                 <p className="loading-icon"><img src="./img/loader.GIF" /></p>
@@ -39,7 +40,7 @@ export class ReaderContainer extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col-sm-8">
-                        <PeopleCard></PeopleCard>
+                        { this.state.storeData.isCardOpen ? <PeopleCard></PeopleCard> : null }
                         <Article
                             header={this.state.data.title}
                             image={this.state.data.image}
@@ -53,4 +54,7 @@ export class ReaderContainer extends Component {
             </div>
         );
     }
-}
+
+});
+
+module.exports = ReaderContainer;
