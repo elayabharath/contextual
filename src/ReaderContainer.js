@@ -2,6 +2,7 @@ import React, { Component }  from 'react';
 
 import { Article } from './Article';
 import { Sidebar } from './Sidebar';
+import { PeopleCard } from './PeopleCard';
 
 import request from 'superagent';
 
@@ -13,6 +14,7 @@ export class ReaderContainer extends Component {
     }
 
     componentDidMount() {
+        console.log(this);
         this.fetchData();
     }
 
@@ -37,6 +39,7 @@ export class ReaderContainer extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col-sm-8">
+                        <PeopleCard></PeopleCard>
                         <Article
                             header={this.state.data.title}
                             image={this.state.data.image}
