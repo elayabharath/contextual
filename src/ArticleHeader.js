@@ -8,9 +8,11 @@ export class ArticleHeader extends Component {
 
     render() {
         return (
-            <div className="article-header" style={{background: 'url('+this.props.image+')'}}>
-                <div style = { {textAlign: "center", fontSize: "22px" } }>{this.props.header}</div>
-                <div style = { {textAlign: "center", fontSize: "14px", fontStyle: "italic"} }>{this.props.description}</div>
+            <div className="article-header" style={{backgroundImage: 'url('+this.props.image+')', backgroundSize: 'cover'}}>
+                <div style={{background: 'rgba(0, 0, 0, 0.6)'}}>
+                    <div style = { {textAlign: "center", fontSize: "22px" } }>{this.props.header}</div>
+                    <div style = { {textAlign: "center", fontSize: "14px", fontStyle: "italic"} }>{this.props.description}</div>
+                </div>
             </div>
         );
     }
