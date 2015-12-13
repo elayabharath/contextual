@@ -3,7 +3,9 @@ import React, { Component }  from 'react';
 export class ArticleHeader extends Component {
   render() {
     return (
-        <p>Article Header</p>
+        <div>
+	        <div>{this.props.articleHeader}</div>
+        </div>
     );
   }
 }
