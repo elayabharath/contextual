@@ -7,23 +7,14 @@ var PeopleCard = React.createClass({
 
     mixins: [Reflux.connect(Store,"data")],
 
-    fetchData: function() {
-        var self = this;
-        request
-           .get('http://54.179.190.109:8080/people/' + encodeURI(this.state.data.name))
-           .end(function(err, res){
-               console.log(res.body);
-           });
-    },
-
     render: function() {
-        this.fetchData();
+
+        console.log(this.state.data.data.image);
+
         return (
             <div className="people-card">
-                <div className="people-image" style={{background: "url('https://upload.wikimedia.org/wikipedia/commons/7/7d/Jonathan_Ive_%28OTRS%29.jpg')", height: "240px", backgroundSize: 'cover'}}></div>
-                <div>Name: Jony Ive</div>
-                <div>Age: 29</div>
-                <div>Country: UK</div>
+                {this.state.data.data.image ? <div className="people-image" style={{backgroundImage: "url('"+this.state.data.data.image+"')", width: "292px", height: "240px"}}></div> : null }
+                <div>{this.state.data.data.snippet}</div>
             </div>
         );
     }

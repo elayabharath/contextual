@@ -7,6 +7,8 @@ var People = React.createClass({
         console.log("Show card: "+this.props.name);
         this.setState({isShowingModal: true});
         Store.selectName(this.props.name);
+        Store.invalidateData();
+        Store.getData(this.props.name);
         Store.showCard();
     },
 
