@@ -16,17 +16,23 @@ var ReaderContainer = React.createClass({
     },
 
     componentDidMount: function() {
-        this.fetchData();
+        console.log(this.props.location.query);
+        this.fetchData(this.props.location.query.url);
     },
 
-    fetchData: function() {
+    fetchData: function(url) {
         var self = this;
         request
            .get('http://54.179.190.109:8080/contents')
+           .query({url: url})
            .end(function(err, res){
                self.setState({data: res.body});
                console.log(res.body);
            });
+    },
+
+    componentWillReceiveProps: function() {
+        this.fetchData(this.props.location.query.url);
     },
 
     render: function() {

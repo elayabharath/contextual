@@ -1,18 +1,43 @@
 var React = require('react');
+var validUrl = require('valid-url');
+var Router = require('react-router');
 
 var Homepage = React.createClass({
 
+	getInitialState: function() {
+		return {error: null};
+	},
+
+	resetError: function(){
+		if(this.state.error) {
+			this.setState({error: null});
+		}
+	},
+
+	goRead: function(event) {
+		event.preventDefault();
+		var url = this.myTextInput.getDOMNode().value;
+
+		if (validUrl.isUri(url)){
+	        this.setState({error: 0});
+			console.log("Valid url");
+			this.props.history.pushState({url: "hello"}, '/read/', {url: encodeURI(url)});
+	    } else {
+	        this.setState({error: 1});
+	    }
+	},
+
 	render: function() {
 
-		var text = "Context.in";
         return (
-			<div className="container">
+			<div className="main-container">
 				<div className="header">
 				    <img src="header-img.png" />
 				</div>
 	            <div className="article-input">
 	                <div>Paste URL of an article to read</div>
-	                <input type="text" placeholder="e.g. http://www.newyorker.com/magazine/2015/02/23/shape-things-come"/><button>Read</button>
+	                <input type="text" onChange={this.resetError} ref={(ref) => this.myTextInput = ref} placeholder="e.g. http://www.newyorker.com/magazine/2015/02/23/shape-things-come"/><button onClick={this.goRead}>Read</button>
+					{this.state.error ? <div><span className="url-error">Not a valid url!</span></div> : null}
 	            </div>
 	            <div className="powered">
 	                <div>Powered by</div>

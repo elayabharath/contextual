@@ -19,6 +19,6 @@ var App = React.createClass({
 React.render((
   <Router>
     <Route path="/" component={Homepage} />
-    <Route path="/read/:url" component={ReaderContainer} />
+    <Route name="read" path="/read/" component={ReaderContainer} />
   </Router>
 ), document.body);
