@@ -60,12 +60,17 @@ html {
             max-width: 320px;
             min-width: 320px;
         }
-        .people {
+        .people, .interest {
             cursor: default;
             padding: 2px 6px;
             text-transform: capitalize;
         }
         .people:hover {
+            background: #C5E1A5;
+            border-radius: 3px;
+        }
+
+        .interest:hover {
             background: #C5E1A5;
             border-radius: 3px;
         }
@@ -156,4 +161,10 @@ html {
             color: #4A148C;
             border-radius: 3px;
             padding: 2px 6px;
+        }
+
+        .people-image {
+            /*background-position: center;*/
+            background-size: cover;
+            background-color: #DDD;
         }

@@ -1,5 +1,6 @@
 var React = require('react');
 var People = require('./People.js');
+var Interest = require('./Interest.js');
 
 var ReaderContainer = React.createClass({
     render: function() {
@@ -14,7 +15,7 @@ var ReaderContainer = React.createClass({
                 <p className="sidebar-title">Interests</p>
                 <div>
                     {this.props.interests.map((keyword, index) => (
-        	        	<p key={index}>{keyword.name}</p>
+                        <Interest key={index} name={keyword.name} id={index+keyword.name} />
         	        ))}
                 </div>
           	</div>

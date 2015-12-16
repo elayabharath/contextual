@@ -38,7 +38,7 @@ var ReaderContainer = React.createClass({
     render: function() {
         if( this.state.data == null ) {
             return <div className="loading-screen">
-                <p className="loading-icon"><img src="./img/loader.GIF" /></p>
+                <p className="loading-icon"><img src="loading.svg" /></p>
             </div>;
         }
 
