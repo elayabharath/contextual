@@ -1,6 +1,7 @@
 var React = require('react');
 var validUrl = require('valid-url');
 var Router = require('react-router');
+var Link = require('react-router').Link;
 
 var Homepage = React.createClass({
 
@@ -27,7 +28,14 @@ var Homepage = React.createClass({
 	    }
 	},
 
+	insertURL: function(evt) {
+		console.log(evt.target);
+		this.myTextInput.getDOMNode().value = "hello";
+	},
+
 	render: function() {
+
+		var obj = {url: "hello"};
 
         return (
 			<div className="main-container">
@@ -38,6 +46,11 @@ var Homepage = React.createClass({
 	                <div>Paste URL of an article to read</div>
 	                <input type="text" onChange={this.resetError} ref={(ref) => this.myTextInput = ref} placeholder="e.g. http://www.newyorker.com/magazine/2015/02/23/shape-things-come"/><button onClick={this.goRead}>Read</button>
 					{this.state.error ? <div><span className="url-error">Not a valid url!</span></div> : null}
+					<div>
+						<span>Quick read: </span>
+						<Link className="quick-read" to="/read/" query={{url: "http://www.newyorker.com/magazine/2015/02/23/shape-things-come"}}>Shape of things to come</Link><span> / </span>
+						<Link className="quick-read" to="/read/" query={{url: "http://www.theguardian.com/environment/2015/nov/26/paris-climate-change-conference-circus-comes-to-town"}}>Paris climate change</Link>
+					</div>
 	            </div>
 	            <div className="powered">
 	                <div>Powered by</div>

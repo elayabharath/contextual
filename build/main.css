@@ -71,9 +71,10 @@ html {
         }
 
         .interest:hover {
-            background: #C5E1A5;
+            background: #F06292;
             border-radius: 3px;
         }
+
 
         .main-container {
             letter-spacing: 0.05em;
@@ -164,7 +165,12 @@ html {
         }
 
         .people-image {
-            /*background-position: center;*/
             background-size: cover;
+            background-position: center;
             background-color: #DDD;
+        }
+
+        .quick-read {
+            color: #FFF;
+            border-bottom: 1px dotted #FFF;
         }
