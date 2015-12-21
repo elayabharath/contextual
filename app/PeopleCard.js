@@ -8,11 +8,8 @@ var PeopleCard = React.createClass({
     mixins: [Reflux.connect(Store,"data")],
 
     render: function() {
-
-        console.log(this.state.data.data.image);
-
         return (
-            <div className="people-card">
+            <div className="people-card" style={{left: this.state.data.position.x, top: this.state.data.position.y}}>
                 {this.state.data.data.image ? <div className="people-image" style={{backgroundImage: "url('"+this.state.data.data.image+"')", width: "292px", height: "240px"}}></div> : null }
                 <div>{this.state.data.data.snippet}</div>
             </div>

@@ -49,7 +49,7 @@ var Homepage = React.createClass({
 					<div>
 						<span>Quick read: </span>
 						<Link className="quick-read" to="/read/" query={{url: "http://www.newyorker.com/magazine/2015/02/23/shape-things-come"}}>Shape of things to come</Link><span> / </span>
-						<Link className="quick-read" to="/read/" query={{url: "http://www.theguardian.com/environment/2015/nov/26/paris-climate-change-conference-circus-comes-to-town"}}>Paris climate change</Link>
+						<Link className="quick-read" to="/read/" query={{url: "http://www.theguardian.com/environment/2015/nov/26/paris-climate-change-conference-circus-comes-to-town"}}>Paris climate change talk</Link>
 					</div>
 	            </div>
 	            <div className="powered">

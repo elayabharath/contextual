@@ -3,8 +3,11 @@ var Store = require('./store.js');
 
 var Interest = React.createClass({
 
-    showCard: function() {
-        console.log("Show card: "+this.props.name);
+    showCard: function(evt) {
+        var element = evt.target;
+        var rect = element.getBoundingClientRect();
+        Store.elementPosition(rect.left, rect.top, rect.right, rect.bottom);
+
         this.setState({isShowingModal: true});
         Store.selectName(this.props.name);
         Store.invalidateData();

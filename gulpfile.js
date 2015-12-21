@@ -19,8 +19,8 @@ var connect = require('gulp-connect');
 // External dependencies you do not want to rebundle while developing,
 // but include in your application deployment
 var dependencies = [
-	'react',
-    'react/addons'
+	// 'react',
+    // 'react/addons'
 ];
 
 var browserifyTask = function (options) {

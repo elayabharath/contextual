@@ -46,7 +46,7 @@ var ReaderContainer = React.createClass({
             <div className="container">
                 <div className="row">
                     <div className="col-sm-8">
-                        { this.state.storeData.isCardOpen ? <PeopleCard></PeopleCard> : null }
+                        { this.state.storeData.isCardOpen ? <PeopleCard x={10} y={10}></PeopleCard> : null }
                         <Article
                             header={this.state.data.title}
                             image={this.state.data.image}
