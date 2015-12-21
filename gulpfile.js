@@ -19,8 +19,8 @@ var connect = require('gulp-connect');
 // External dependencies you do not want to rebundle while developing,
 // but include in your application deployment
 var dependencies = [
-	// 'react',
-    // 'react/addons'
+	'react',
+    'react/addons'
 ];
 
 var browserifyTask = function (options) {
@@ -45,7 +45,7 @@ var browserifyTask = function (options) {
     appBundler.bundle()
       .on('error', gutil.log)
       .pipe(source('main.js'))
-      .pipe(gulpif(!options.development, streamify(uglify())))
+    //   .pipe(gulpif(!options.development, streamify(uglify())))
       .pipe(gulp.dest(options.dest))
       .pipe(gulpif(options.development, livereload()))
       .pipe(notify(function () {
@@ -109,15 +109,15 @@ var browserifyTask = function (options) {
 
     // Run the vendor bundle
     var start = new Date();
-    console.log('Building VENDORS bundle');
-    vendorsBundler.bundle()
-      .on('error', gutil.log)
-      .pipe(source('vendors.js'))
-      .pipe(gulpif(!options.development, streamify(uglify())))
-      .pipe(gulp.dest(options.dest))
-      .pipe(notify(function () {
-        console.log('VENDORS bundle built in ' + (Date.now() - start) + 'ms');
-      }));
+    // console.log('Building VENDORS bundle');
+    // vendorsBundler.bundle()
+    //   .on('error', gutil.log)
+    //   .pipe(source('vendors.js'))
+    //   .pipe(gulpif(!options.development, streamify(uglify())))
+    //   .pipe(gulp.dest(options.dest))
+    //   .pipe(notify(function () {
+    //     console.log('VENDORS bundle built in ' + (Date.now() - start) + 'ms');
+    //   }));
 
   }
 

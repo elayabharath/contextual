@@ -31,10 +31,13 @@ var Store = Reflux.createStore({
         request
            .get('http://54.179.190.109:8080/people/' + encodeURI(name))
            .end(function(err, res){
-               console.log("request finished");
                var response = JSON.parse(res.text);
-               console.log(response);
-               self.data.data.snippet = response.snippet || "Not available";
+               var sentences = [];
+
+               if(response.snippet){
+                   sentences = response.snippet.split('. ');
+               }
+               self.data.data.snippet = sentences[0] + sentences[1] || "Not available";
                self.data.data.image = response.image || null;
                self.trigger(self.data);
            });
@@ -68,8 +71,8 @@ var Store = Reflux.createStore({
             x = right + 10;
         }
 
-        if(y + 320 > document.body.getBoundingClientRect().height) {
-            y = document.body.getBoundingClientRect().height - 320;
+        if(y + 400 > document.body.getBoundingClientRect().height) {
+            y = document.body.getBoundingClientRect().height - 400;
         }
 
         this.data.position = {x: x, y: y};
