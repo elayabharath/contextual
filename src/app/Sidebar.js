@@ -9,15 +9,15 @@ var ReaderContainer = React.createClass({
                 <p className="instruction">Hover to get more details.</p>
                 <p className="sidebar-title">Key People</p>
                 <div>
-        	        {this.props.people.map((keyword, index) => (
-        	        	<People key={index} name={keyword.name} id={index+keyword.name} />
-        	        ))}
+        	        {this.props.people.map(function(keyword, index) {
+                        return <People key={index} name={keyword.name} id={index+keyword.name} />
+                    })}
               	</div>
                 <p className="sidebar-title">Interests</p>
                 <div>
-                    {this.props.interests.map((keyword, index) => (
-                        <Interest key={index} name={keyword.name} id={index+keyword.name} />
-        	        ))}
+                    {this.props.interests.map(function(keyword, index) {
+                        return <Interest key={index} name={keyword.name} id={index+keyword.name} />
+                    })}
                 </div>
           	</div>
         );

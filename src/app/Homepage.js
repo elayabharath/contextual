@@ -17,7 +17,7 @@ var Homepage = React.createClass({
 
 	goRead: function(event) {
 		event.preventDefault();
-		var url = this.myTextInput.getDOMNode().value;
+		var url = this.refs.myTextInput.value;
 
 		if (validUrl.isUri(url)){
 	        this.setState({error: 0});
@@ -27,22 +27,15 @@ var Homepage = React.createClass({
 	    }
 	},
 
-	insertURL: function(evt) {
-		this.myTextInput.getDOMNode().value = "hello";
-	},
-
 	render: function() {
 
-		var obj = {url: "hello"};
-
-        return (
-			<div className="main-container">
+		return <div className="main-container">
 				<div className="header">
 				    <img src="img/header-img.png" />
 				</div>
 	            <div className="article-input">
 	                <div>Paste URL of an article to read</div>
-	                <input type="text" onChange={this.resetError} ref={(ref) => this.myTextInput = ref} placeholder="e.g. http://www.newyorker.com/magazine/2015/02/23/shape-things-come"/><button onClick={this.goRead}>Read</button>
+	                <input type="text" onChange={this.resetError} ref="myTextInput" placeholder="e.g. http://www.newyorker.com/magazine/2015/02/23/shape-things-come"/><button onClick={this.goRead}>Read</button>
 					{this.state.error ? <div><span className="url-error">Not a valid url!</span></div> : null}
 					<div>
 						<span>Quick examples: </span>
@@ -53,11 +46,10 @@ var Homepage = React.createClass({
 					</div>
 	            </div>
 	            <div className="made">
-					<span>Powered by <a href="https://en.wikipedia.org/wiki/Main_Page" target="_blank">Wikipedia</a></span> /&nbsp;
+					<span>Powered by <a href="https://en.wikipedia.org/wiki/Main_Page" target="_blank">Wikipedia</a></span> / &nbsp;
 					<span>Made with &hearts; by <a href="https://www.facebook.com/elayabharath" target="_blank">EB</a> / <a href="https://www.facebook.com/n4nagappan" target="_blank">Nagappan</a></span>
 	            </div>
-	        </div>
-        );
+	        </div>;
 	}
 
 });

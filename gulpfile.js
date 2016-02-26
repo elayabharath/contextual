@@ -16,6 +16,7 @@ var runSequence = require('run-sequence');
 var uglify = require('gulp-uglify');
 var cssmin = require('gulp-cssmin');
 var buffer = require('vinyl-buffer');
+var gutil = require('gulp-util');
 
 var path = {
     ALL: ['src/**/*.*'],
@@ -112,7 +113,7 @@ gulp.task('buildJS:prod', function() {
         })
         .pipe(source('contextual.js'))
         .pipe(buffer())
-        .pipe(uglify())
+        .pipe(uglify({output: {ascii_only:true}}).on('error', gutil.log))
         .pipe(gulp.dest(path.DEST_PROD));
 });
 

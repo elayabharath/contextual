@@ -20,7 +20,7 @@ var App = React.createClass({
 });
 
 ReactDOM.render((
-    <Router history={hashHistory}>
+    <Router history={browserHistory}>
         <Route path="/" component={Homepage} />
         <Route name="read" path="/read" component={ReaderContainer} />
     </Router>
