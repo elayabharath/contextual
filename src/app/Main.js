@@ -6,6 +6,8 @@ var routerModule = require('react-router');
 var browserHistory = routerModule.browserHistory;
 var hashHistory = routerModule.hashHistory;
 var Router = routerModule.Router;  // component
+var IndexRoute = routerModule.IndexRoute;
+
 var Route = routerModule.Route;
 
 var App = React.createClass({
@@ -19,7 +21,7 @@ var App = React.createClass({
 
 ReactDOM.render((
     <Router history={hashHistory}>
-      <Route path="/" component={Homepage} />
-      <Route name="read" path="/read" component={ReaderContainer} />
+        <Route path="/" component={Homepage} />
+        <Route name="read" path="/read" component={ReaderContainer} />
     </Router>
 ), document.getElementById("contextualapp"));

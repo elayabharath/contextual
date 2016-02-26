@@ -1,4 +1,5 @@
 var React = require('react');
+var CardStore = require('./CardStore.js');
 var Store = require('./store.js');
 
 var People = React.createClass({
@@ -10,8 +11,7 @@ var People = React.createClass({
 
         this.setState({isShowingModal: true});
         Store.selectName(this.props.name);
-        Store.invalidateData();
-        Store.getData(this.props.name);
+        CardStore.getData(this.props.name);
         Store.showCard();
     },
 

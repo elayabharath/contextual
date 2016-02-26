@@ -16,7 +16,6 @@ var ReaderContainer = React.createClass({
     },
 
     componentDidMount: function() {
-        console.log(this.props.location.query);
         this.fetchData(this.props.location.query.url);
     },
 
@@ -27,13 +26,10 @@ var ReaderContainer = React.createClass({
            .query({url: url})
            .end(function(err, res){
                self.setState({data: res.body});
-               console.log(res.body);
            });
     },
 
     componentWillReceiveProps: function() {
-        console.log("new url");
-        console.log(this.props.location.query.url);
         this.fetchData(this.props.location.query.url);
     },
 

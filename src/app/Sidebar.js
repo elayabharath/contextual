@@ -6,6 +6,7 @@ var ReaderContainer = React.createClass({
     render: function() {
         return (
             <div className="sidebar" style={{height: "100%"}}>
+                <p className="instruction">Hover to get more details.</p>
                 <p className="sidebar-title">Key People</p>
                 <div>
         	        {this.props.people.map((keyword, index) => (

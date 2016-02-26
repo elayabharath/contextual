@@ -1,6 +1,10 @@
 @import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
+#contextualapp {
+    height: 100%;
+}
+
 html {
             padding: 0;
             margin: 0;
@@ -39,10 +43,16 @@ html {
             position: fixed;
             overflow-y: scroll;
         }
+
+        .instruction {
+            padding: 12px 0;
+            color: #66BB6A;
+            font-style: italic;
+        }
+
         .sidebar-title {
             color: #aaa;
             text-transform: uppercase;
-            margin-top: 32px;
         }
         .keyword-chip {
             padding: 4px 0;
@@ -173,4 +183,24 @@ html {
         .quick-read {
             color: #FFF;
             border-bottom: 1px dotted #FFF;
+        }
+
+        .sidebar::-webkit-scrollbar {
+            -webkit-appearance: none;
+        }
+
+        .sidebar::-webkit-scrollbar:vertical {
+            width: 8px;
+        }
+
+        .sidebar::-webkit-scrollbar:horizontal {
+            height: 8px;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb {
+            border-radius: 6px;
+            background-color: rgba(0, 0, 0, .5);
+        }
+
+        .sidebar::-webkit-scrollbar-track {
         }

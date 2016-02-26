@@ -38,6 +38,7 @@
     "eventlistener": "0.0.1",
     "foundation-apps": "^1.2.0",
     "history": "^1.17.0",
+    "immutable": "^3.7.6",
     "lodash": "^4.1.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
