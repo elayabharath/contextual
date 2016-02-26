@@ -32,13 +32,15 @@ var ReaderContainer = React.createClass({
     },
 
     componentWillReceiveProps: function() {
+        console.log("new url");
+        console.log(this.props.location.query.url);
         this.fetchData(this.props.location.query.url);
     },
 
     render: function() {
         if( this.state.data == null ) {
             return <div className="loading-screen">
-                <p className="loading-icon"><img src="loading.svg" /></p>
+                <p className="loading-icon"><img src="../img/loading.svg" /></p>
             </div>;
         }
 

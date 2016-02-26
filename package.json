@@ -1,34 +1,50 @@
 {
-  "name": "react-app-boilerplate",
-  "version": "2.2.2",
-  "description": "React application boilerplate",
-  "author": "Christian Alfoni",
+  "name": "Contextual",
+  "version": "0.0.1",
+  "description": "App for reading articles with context",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elayabharath/contextual.git"
+  },
+  "author": "Elayabharath Elango",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elayabharath/contextual/issues"
+  },
+  "homepage": "https://github.com/elayabharath/contextal",
   "devDependencies": {
-    "browserify": "^10.2.1",
-    "glob": "^4.0.6",
-    "gulp": "^3.8.9",
-    "gulp-concat": "^2.3.4",
-    "gulp-connect": "^2.2.0",
-    "gulp-cssmin": "^0.1.6",
-    "gulp-if": "^1.2.4",
-    "gulp-jasmine2-phantomjs": "^0.1.1",
-    "gulp-livereload": "^2.1.1",
-    "gulp-notify": "^1.4.2",
-    "gulp-shell": "^0.2.10",
-    "gulp-streamify": "0.0.5",
-    "gulp-uglify": "^0.3.1",
-    "gulp-util": "^3.0.0",
-    "phantomjs": "^1.9.12",
-    "reactify": "^0.15.2",
-    "vinyl-source-stream": "^0.1.1",
-    "watchify": "^2.1.1"
+    "browser-sync": "^2.11.1",
+    "browserify": "^13.0.0",
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-copy": "0.0.2",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-react": "^3.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.1",
+    "gulp-streamify": "^1.0.2",
+    "gulp-uglify": "^1.5.2",
+    "reactify": "^1.1.1",
+    "run-sequence": "^1.1.5",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "react": "^0.13.3",
-    "react-tether": "^0.1.2",
+    "eventlistener": "0.0.1",
+    "foundation-apps": "^1.2.0",
+    "history": "^1.17.0",
+    "lodash": "^4.1.0",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-router": "^2.0.0",
     "reflux": "^0.3.0",
-    "superagent": "^1.5.0",
-    "superagent-jsonp": "0.0.6"
+    "superagent": "^1.7.2",
+    "underscore": "^1.8.3",
+    "valid-url": "^1.0.9"
   }
 }
