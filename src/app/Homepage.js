@@ -46,7 +46,7 @@ var Homepage = React.createClass({
 					</div>
 	            </div>
 				<div className="powered">
-					<img src="./img/chrome.png" width={240}/>
+					<a href="https://chrome.google.com/webstore/detail/lkppkhgpnnhlchbeialcjkdokfienhli" target="_blank"><img src="./img/chrome.png" width={240}/></a>
 				</div>
 	            <div className="made">
 					<span>Powered by <a href="https://en.wikipedia.org/wiki/Main_Page" target="_blank">Wikipedia</a></span> / &nbsp;
