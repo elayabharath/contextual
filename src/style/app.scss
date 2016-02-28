@@ -136,7 +136,10 @@ html {
             cursor: pointer;
         }
 
-        .powered, .made {
+        .powered {
+            padding-top: 32px;
+        }
+        .made {
             color: #F4FF81;
             padding-top: 32px;
             font-size: 14px;

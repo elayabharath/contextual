@@ -22,7 +22,7 @@ var ReaderContainer = React.createClass({
     fetchData: function(url) {
         var self = this;
         request
-           .get('http://54.179.190.109:8080/contents')
+           .get('http://contextually.in/contents')
            .query({url: url})
            .end(function(err, res){
                self.setState({data: res.body});

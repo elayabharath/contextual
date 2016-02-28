@@ -31,11 +31,11 @@ var Homepage = React.createClass({
 
 		return <div className="main-container">
 				<div className="header">
-				    <img src="img/header-img.png" />
+				    <img src="./img/header-img.png" />
 				</div>
 	            <div className="article-input">
 	                <div>Paste URL of an article to read</div>
-	                <input type="text" onChange={this.resetError} ref="myTextInput" placeholder="e.g. http://www.newyorker.com/magazine/2015/02/23/shape-things-come"/><button onClick={this.goRead}>Read</button>
+	                <input type="text" onChange={this.resetError} ref="myTextInput"/><button onClick={this.goRead}>Read</button>
 					{this.state.error ? <div><span className="url-error">Not a valid url!</span></div> : null}
 					<div>
 						<span>Quick examples: </span>
@@ -45,6 +45,9 @@ var Homepage = React.createClass({
 						<Link className="quick-read" to={{ pathname: '/read/', query: { url: "http://www.theguardian.com/environment/2015/nov/26/paris-climate-change-conference-circus-comes-to-town" } }}>Paris climate change talk</Link>
 					</div>
 	            </div>
+				<div className="powered">
+					<img src="./img/chrome.png" width={240}/>
+				</div>
 	            <div className="made">
 					<span>Powered by <a href="https://en.wikipedia.org/wiki/Main_Page" target="_blank">Wikipedia</a></span> / &nbsp;
 					<span>Made with &hearts; by <a href="https://www.facebook.com/elayabharath" target="_blank">EB</a> / <a href="https://www.facebook.com/n4nagappan" target="_blank">Nagappan</a></span>

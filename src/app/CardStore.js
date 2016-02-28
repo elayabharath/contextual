@@ -21,7 +21,7 @@ var CardStore = Reflux.createStore({
 
         var self = this;
         request
-           .get('http://54.179.190.109:8080/people/' + encodeURI(name))
+           .get('http://contextually.in/people/' + encodeURI(name))
            .end(function(err, res){
                var response = JSON.parse(res.text);
                var sentences = [];
